@@ -1,0 +1,9 @@
+.container.newimg {
+    margin: 0 0 0 0;
+    width: 40%;
+    background-image: url(../../../assets/ji.jpg);
+}
+.container-fluid.image {
+    background-image: url(../../../assets/ji.jpg);
+}
+

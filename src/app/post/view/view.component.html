@@ -1,0 +1,41 @@
+<nav class="navbar navbar-light bg-primary">
+    <div class="container">
+        <h1 style="color: white">View Employee Details</h1>
+        <div class="d-flex">
+            <a href="#" routerLink="/post/index" class="btn btn-success">Back</a>
+
+        </div>
+    </div>
+</nav>
+<div class="container">
+    <table class="table table-hover  mt-2">
+        <thead class="table-dark">
+            <tr>
+                <th scope="col">Unique Id</th>
+                <th scope="col">First Name</th>
+                <th scope="col">Last Name</th>
+                <th scope="col">Email</th>
+
+                <th scope="col">Job Title</th>
+                <th scope="col">Address</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="table-info">
+
+
+                <td>{{ post?.id }}</td>
+                <td>{{ post?.firstname }}</td>
+                <td>{{ post?.lastname }}</td>
+                <td>{{ post?.jobtitle }}</td>
+                <td>{{ post?.email }}</td>
+                <td>{{ post?.address }}</td>
+
+            </tr>
+        </tbody>
+    </table>
+
+
+
+</div>
