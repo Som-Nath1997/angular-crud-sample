@@ -1,84 +1,36 @@
 {
   "posts": [
     {
-      "firstname": "ashish",
-      "lastname": "anot ji",
+      "firstname": "som",
+      "lastname": "nath ",
       "jobtitle": "s.e",
-      "email": "ashish@123",
+      "email": "som@so.se",
+      "address": "hp bilaspur",
+      "id": 1
+    },
+    {
+      "firstname": "Ashish ",
+      "lastname": "Anot",
+      "jobtitle": "s.e",
+      "email": "ashish@ji.ae",
       "address": "hp una",
       "id": 2
     },
     {
       "firstname": "Aman",
-      "lastname": "sharma ji",
+      "lastname": "Sharma",
       "jobtitle": "s.e",
-      "email": "aman@ji.co",
-      "address": "hp dharmshala",
+      "email": "aman@qw.co",
+      "address": "hp kangra",
       "id": 3
     },
     {
       "firstname": "deepak",
-      "lastname": "dhiman ji",
+      "lastname": "dhiman",
       "jobtitle": "s.e",
-      "email": "deepak@12345",
-      "address": "hp dharamshala",
+      "email": "deepak@qw.jijiji",
+      "address": "hp dharmshala",
       "id": 4
-    },
-    {
-      "firstname": "vinod  ji",
-      "lastname": "prajapati ji",
-      "jobtitle": "s.e",
-      "email": "vinod@123",
-      "address": "mp indore",
-      "id": 5
-    },
-    {
-      "firstname": "som",
-      "lastname": "nath",
-      "jobtitle": "s.e",
-      "email": "som@gmail.com",
-      "address": "hp bilaspur g ",
-      "id": 7
-    },
-    {
-      "firstname": "Som",
-      "lastname": "Nath",
-      "jobtitle": "S.E",
-      "email": "som@gmail.com",
-      "address": "H p himachal",
-      "id": 8
-    },
-    {
-      "firstname": "som",
-      "lastname": "nath",
-      "jobtitle": "s.e",
-      "email": "deepak@qwe.co",
-      "address": "ws",
-      "id": 9
-    },
-    {
-      "firstname": "som",
-      "lastname": "nath",
-      "jobtitle": "s.e",
-      "email": "som@gmail.com",
-      "address": "hp bilaspur g ",
-      "id": 10
-    },
-    {
-      "firstname": "deepak",
-      "lastname": "dhiman ji",
-      "jobtitle": "s.e ji",
-      "email": "deepak@123.co",
-      "address": "new here",
-      "id": 11
-    },
-    {
-      "firstname": "e5r",
-      "lastname": "kj",
-      "jobtitle": "gr",
-      "email": "rr@qw.cp",
-      "address": "5ry",
-      "id": 12
     }
   ],
   "comments": [],

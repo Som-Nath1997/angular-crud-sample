@@ -1,0 +1,18 @@
+.container.newimg {
+    margin: 0 0 0 0;
+    width: 40%;
+    background-image: url(../../../assets/edit.jpg);
+    height: 90vh;
+   
+  }
+  .container-fluid.image {
+    background-image: url(../../../assets/edit.jpg);
+  }
+  span {
+    color: #dc3545;
+    font-size: 14px;
+    position: absolute;
+}
+label{
+    color:azure;
+}

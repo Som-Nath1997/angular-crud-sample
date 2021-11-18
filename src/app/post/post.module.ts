@@ -7,19 +7,22 @@ import { ViewComponent } from './view/view.component';
 import { CreateComponent } from './create/create.component';
 import { EditComponent } from './edit/edit.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; 
+import { ToastrModule } from 'ngx-toastr';
 @NgModule({
   declarations: [
     IndexComponent,
     ViewComponent,
     CreateComponent,
-    EditComponent
+    EditComponent,
   ],
   imports: [
     CommonModule,
     PostRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot()
   ]
 })
 export class PostModule { }

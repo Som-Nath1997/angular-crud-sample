@@ -16,38 +16,38 @@
         <form [formGroup]="form" (ngSubmit)="submit()" class="needs-validation" >
 
             <div class="form-group">
-                <label class="m-2" style="font-size: 1.4rem; font-weight:600;" for="firstname">First Name</label>
+                <label class="m-2" style="font-size: 1.4rem; font-weight:600;" for="firstname">First Name <span > *</span></label>
                 <input formControlName="firstname" id="firstname" autocomplete="off" type="text" class="form-control" [ngClass]="{ 'is-invalid': (f.firstname.dirty || f.firstname.touched) && f.firstname.invalid }">
-                <div class="invalid-feedback" *ngIf="(f.firstname.dirty || f.firstname.touched) && f.firstname.invalid" class="alert alert-danger" >
+                <div class="invalid-feedback" *ngIf="(f.firstname.dirty || f.firstname.touched) && f.firstname.invalid" >
                     <div *ngIf="f.firstname.errors">First Name is required.</div>
                 </div>
             </div>
 
             <div class="form-group">
-                <label class="m-2" style="font-size: 1.4rem; font-weight:600;" for="lastname">Last Name</label>
+                <label class="m-2" style="font-size: 1.4rem; font-weight:600;" for="lastname">Last Name <span > *</span></label>
                 <input formControlName="lastname" id="lastname" autocomplete="off" type="text" class="form-control"[ngClass]="{ 'is-invalid': (f.lastname.dirty || f.lastname.touched) && f.lastname.invalid }">
-                <div class="invalid-feedback"  *ngIf="(f.lastname.dirty || f.lastname.touched) && f.lastname.invalid" class="alert alert-danger">
+                <div class="invalid-feedback"  *ngIf="(f.lastname.dirty || f.lastname.touched) && f.lastname.invalid">
                     <div *ngIf="f.lastname.errors">Last Name is required.</div>
                 </div>
             </div>
             <div class="form-group">
-                <label class="m-2" style="font-size: 1.4rem; font-weight:600;" for="jobtitle">JobTitle</label>
+                <label class="m-2" style="font-size: 1.4rem; font-weight:600;" for="jobtitle">JobTitle <span > *</span></label>
                 <input formControlName="jobtitle" id="jobtitle" autocomplete="off" type="text" class="form-control"[ngClass]="{ 'is-invalid': (f.jobtitle.dirty || f.jobtitle.touched) && f.jobtitle.invalid }">
-                <div class="invalid-feedback" *ngIf="(f.jobtitle.dirty || f.jobtitle.touched) && f.jobtitle.invalid" class="alert alert-danger">
+                <div class="invalid-feedback" *ngIf="(f.jobtitle.dirty || f.jobtitle.touched) && f.jobtitle.invalid" >
                     <div *ngIf="f.jobtitle.errors">JobTitle is required.</div>
                 </div>
             </div>
             <div class="form-group">
-                <label class="m-2" style="font-size: 1.4rem; font-weight:600;" for="email">Email</label>
+                <label class="m-2" style="font-size: 1.4rem; font-weight:600;" for="email">Email<span > *</span></label>
                 <input formControlName="email" autocomplete="off" id="email" type="text" class="form-control"[ngClass]="{ 'is-invalid': (f.email.dirty || f.email.touched) && f.email.invalid }">
-                <div class="invalid-feedback" *ngIf="(f.email.dirty || f.email.touched) && f.email.invalid" class="alert alert-danger">
+                <div class="invalid-feedback" *ngIf="(f.email.dirty || f.email.touched) && f.email.invalid" >
                     <div *ngIf="f.email.errors">Email is required.</div>
                 </div>
             </div>
             <div class="form-group">
-                <label class="m-2" style="font-size: 1.4rem; font-weight:600;" for="address">Address</label>
+                <label class="m-2" style="font-size: 1.4rem; font-weight:600;" for="address">Address<span > *</span></label>
                 <input formControlName="address" id="address" autocomplete="off" type="text" class="form-control" [ngClass]="{ 'is-invalid': (f.address.dirty || f.address.touched) && f.address.invalid }">
-                <div class="invalid-feedback" *ngIf="(f.address.dirty || f.address.touched) && f.address.invalid" class="alert alert-danger">
+                <div class="invalid-feedback" *ngIf="(f.address.dirty || f.address.touched) && f.address.invalid">
                     <div *ngIf="f.address.errors">address is required.</div>
                 </div>
             </div>
