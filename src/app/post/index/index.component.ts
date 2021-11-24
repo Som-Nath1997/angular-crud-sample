@@ -11,8 +11,10 @@ import { Post } from '../post';
 })
 export class IndexComponent implements OnInit {
   posts: Post[] = [];
+ 
 
-  constructor(public postService: PostService , ) {}
+  constructor(public postService: PostService , ) {
+  }
   message: boolean = false;
 
   ngOnInit(): void {

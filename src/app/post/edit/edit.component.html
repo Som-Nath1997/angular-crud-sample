@@ -17,8 +17,9 @@
         <form [formGroup]="form" (ngSubmit)="submit()">
 
             <div class="form-group">
-                <label class="m-2" style="font-size: 1.4rem; font-weight:600;" for="firstname">First Name<span > *</span></label>
-                <input formControlName="firstname" id="firstname"  type="text" class="form-control"
+                <label class="m-2" style="font-size: 1.4rem; font-weight:600;" for="firstname">First Name<span>
+                        *</span></label>
+                <input formControlName="firstname" id="firstname" type="text" class="form-control"
                     [ngClass]="{ 'is-invalid': (f.firstname.dirty || f.firstname.touched) && f.firstname.invalid }">
                 <div class="invalid-feedback" *ngIf="(f.firstname.dirty || f.firstname.touched) && f.firstname.invalid"
                     class="invalid-feedback">
@@ -27,8 +28,9 @@
             </div>
 
             <div class="form-group">
-                <label class="m-2" style="font-size: 1.4rem; font-weight:600;" for="lastname">Last Name<span > *</span></label>
-                <input formControlName="lastname" id="lastname"  type="text" class="form-control"
+                <label class="m-2" style="font-size: 1.4rem; font-weight:600;" for="lastname">Last Name<span>
+                        *</span></label>
+                <input formControlName="lastname" id="lastname" type="text" class="form-control"
                     [ngClass]="{ 'is-invalid': (f.lastname.dirty || f.lastname.touched) && f.lastname.invalid }">
                 <div class="invalid-feedback" *ngIf="(f.lastname.dirty || f.lastname.touched) && f.lastname.invalid"
                     class="invalid-feedback">
@@ -36,8 +38,9 @@
                 </div>
             </div>
             <div class="form-group">
-                <label class="m-2" style="font-size: 1.4rem; font-weight:600;" for="jobtitle">JobTitle<span > *</span></label>
-                <input formControlName="jobtitle" id="jobtitle"  type="text" class="form-control"
+                <label class="m-2" style="font-size: 1.4rem; font-weight:600;" for="jobtitle">JobTitle<span>
+                        *</span></label>
+                <input formControlName="jobtitle" id="jobtitle" type="text" class="form-control"
                     [ngClass]="{ 'is-invalid': (f.jobtitle.dirty || f.jobtitle.touched) && f.jobtitle.invalid }">
                 <div class="invalid-feedback" *ngIf="(f.jobtitle.dirty || f.jobtitle.touched) && f.jobtitle.invalid"
                     class="invalid-feedback">
@@ -45,8 +48,8 @@
                 </div>
             </div>
             <div class="form-group">
-                <label class="m-2"  style="font-size: 1.4rem; font-weight:600;"for="email">Email<span > *</span></label>
-                <input formControlName="email" id="email"  type="text" class="form-control"
+                <label class="m-2" style="font-size: 1.4rem; font-weight:600;" for="email">Email<span> *</span></label>
+                <input formControlName="email" id="email" type="text" class="form-control"
                     [ngClass]="{ 'is-invalid': (f.email.dirty || f.email.touched) && f.email.invalid }">
                 <div class="invalid-feedback" *ngIf="(f.email.dirty || f.email.touched) && f.email.invalid"
                     class="invalid-feedback">
@@ -54,16 +57,26 @@
                 </div>
             </div>
             <div class="form-group">
-                <label class="m-2" style="font-size: 1.4rem; font-weight:600;" for="address">Address<span > *</span></label>
-                <input formControlName="address" id="address"  type="text" class="form-control"
+                <label class="m-2" style="font-size: 1.4rem; font-weight:600;" for="address">Address<span>
+                        *</span></label>
+                <input formControlName="address" id="address" type="text" class="form-control"
                     [ngClass]="{ 'is-invalid': (f.address.dirty || f.address.touched) && f.address.invalid }">
                 <div class="invalid-feedback" *ngIf="(f.address.dirty || f.address.touched) && f.address.invalid"
                     class="invalid-feedback">
                     <div *ngIf="f.address.errors">address is required.</div>
                 </div>
+
+            </div>
+            <div formArrayName="hobbies">
+                <h4 class="m-2"> Add Your Hobbies</h4>
+                <div class="form-group " style=" display: flex;"
+                    *ngFor="let hobbyControl oof getHobbies(); let i = index">
+                    <input type="text" style="width: 50%;" placeholder="Enter your Hobby" class="form-control m-2"[formControlName]="i">
+
+                </div>
             </div>
 
-            <button class="btn btn-success mt-2" type="submit" [disabled]="!form.valid">Update Employee</button>
+                <button class="btn btn-success mt-2" type="submit" [disabled]="!form.valid">Update Employee</button>
         </form>
     </div>
 </div>

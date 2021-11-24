@@ -1,7 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { PostService } from '../post.service';
 import { Router } from '@angular/router';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
+import {
+  FormGroup,
+  FormControl,
+  Validators,
+  FormArray,
+  FormBuilder,
+} from '@angular/forms';
+
 
 @Component({
   selector: 'app-create',
@@ -10,6 +17,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 })
 export class CreateComponent implements OnInit {
   form!: FormGroup;
+  hobbies!: FormArray;
 
   constructor(public postService: PostService, private router: Router) {}
   message: boolean = false;
@@ -24,6 +32,8 @@ export class CreateComponent implements OnInit {
         Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,4}$'),
       ]),
       address: new FormControl('', Validators.required),
+      hobbies: new FormArray([
+      ]),
     });
   }
   get f() {
@@ -36,11 +46,24 @@ export class CreateComponent implements OnInit {
       console.log('Employee created successfully!');
       this.form.reset({});
       this.form.disable();
-      //  this.router.navigateByUrl('post/index');
+      this.router.navigateByUrl('post/index');
     });
   }
   remove() {
     this.message = false;
     this.router.navigateByUrl('post/index');
   }
+  onAddHobby() {
+    const control = new FormControl(null, Validators.required);
+    (this.form.get('hobbies') as FormArray).push(control);
+  
+  }
+  getHobbies() {
+    return (this.form.get('hobbies') as FormArray).controls;
+  }
+  deletehobbies(i:number){
+    const control = <FormArray>this.form.controls['hobbies'];
+    control.removeAt(i);
+  }
+  
 }

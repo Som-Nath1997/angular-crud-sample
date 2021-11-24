@@ -6,6 +6,7 @@
       "jobtitle": "s.e",
       "email": "som@so.se",
       "address": "hp bilaspur",
+      "hobbies": [],
       "id": 1
     },
     {
@@ -31,6 +32,72 @@
       "email": "deepak@qw.jijiji",
       "address": "hp dharmshala",
       "id": 4
+    },
+    {
+      "firstname": "t",
+      "lastname": "t",
+      "jobtitle": "t",
+      "email": "tw@12.jyu",
+      "address": "ytu",
+      "hobbies": "rujyi",
+      "id": 5
+    },
+    {
+      "firstname": "wrt",
+      "lastname": "t",
+      "jobtitle": "t",
+      "email": "twdf@qwq.yui",
+      "address": "ygjt",
+      "hobbies": [
+        "irjthirewt4",
+        "tg344"
+      ],
+      "id": 11
+    },
+    {
+      "firstname": "yj",
+      "lastname": "yt",
+      "jobtitle": "ytu",
+      "email": "fge@wdwe.gyuj",
+      "address": "tyu",
+      "hobbies": [
+        "6yu6",
+        "6u",
+        "6yu"
+      ],
+      "id": 12
+    },
+    {
+      "firstname": "yt",
+      "lastname": "yjh",
+      "jobtitle": "ytj",
+      "email": "yhj@.hnju",
+      "address": "edtrf",
+      "hobbies": [
+        "rtg"
+      ],
+      "id": 14
+    },
+    {
+      "firstname": "lp",
+      "lastname": "tiu",
+      "jobtitle": "iiut",
+      "email": "ytut@.vghuj",
+      "address": "ytjutlo",
+      "hobbies": [],
+      "id": 15
+    },
+    {
+      "firstname": "hello",
+      "lastname": "hello1",
+      "jobtitle": "testing",
+      "email": "testung@.ki.indfe",
+      "address": "hello here",
+      "hobbies": [
+        "new",
+        "game "
+      ],
+      "id": 16
     }
   ],
   "comments": [],

@@ -16,12 +16,13 @@
         <table class="table table-hover table-info table-striped  ">
             <thead class="table-dark">
                 <tr>
-                    <th scope="col">Unique Id</th>
+                    <th scope="col">#Id</th>
                     <th scope="col">First Name</th>
                     <th scope="col">Last Name</th>
                     <th scope="col">Job Title</th>
                     <th scope="col">Email</th>
                     <th scope="col">Address</th>
+                    <th scope="col">hobbies</th>
                     <th scope="col">Employee Data View/Edit/Delete</th>
                 </tr>
             </thead>
@@ -35,6 +36,7 @@
                     <td>{{ post.jobtitle }}</td>
                     <td>{{ post.email }}</td>
                     <td>{{ post.address }}</td>
+                    <td>{{ post.hobbies }}</td>
                     <td>
                         <a href="#" [routerLink]="['/post/', post.id, 'view']" class="btn btn-info  mx-3 ">View</a>
                         <a href="#" [routerLink]="['/post/', post.id, 'edit']" class="btn btn-primary mx-3 ">Edit</a>
