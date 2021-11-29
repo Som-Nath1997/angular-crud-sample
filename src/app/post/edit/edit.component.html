@@ -67,16 +67,15 @@
                 </div>
 
             </div>
-            <div formArrayName="hobbies">
-                <h4 class="m-2"> Add Your Hobbies</h4>
-                <div class="form-group " style=" display: flex;"
-                    *ngFor="let hobbyControl oof getHobbies(); let i = index">
-                    <input type="text" style="width: 50%;" placeholder="Enter your Hobby" class="form-control m-2"[formControlName]="i">
-
+            <div formArrayName="hobbies"> <label>
+                    Update-Hobbies
+                </label>
+                <div *ngFor="let hobbyControl of  hobbies.controls;  let i=index">
+                    <input type="text" [formControlName]="i">
                 </div>
             </div>
 
-                <button class="btn btn-success mt-2" type="submit" [disabled]="!form.valid">Update Employee</button>
+            <button class="btn btn-success mt-2" type="submit" [disabled]="!form.valid">Update Employee</button>
         </form>
     </div>
 </div>

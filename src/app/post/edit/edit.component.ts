@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PostService } from '../post.service';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Post } from '../post';
+import { Hobbie, Post } from '../post';
 import {
   FormGroup,
   FormControl,
@@ -34,6 +34,7 @@ export class EditComponent implements OnInit {
     
     this.id = this.route.snapshot.params['postId'];
     this.postService.find(this.id, this.firstname).subscribe((data: Post) => {
+      console.log(data.hobbies);
       this.post = data;
       this.form.patchValue({
         firstname: data.firstname,
@@ -42,7 +43,14 @@ export class EditComponent implements OnInit {
         email: data.email,
         address: data.address,
       });
+      if (data.hobbies.length > 0) {
+        data.hobbies.forEach((value) => {
+        (this.form.get('hobbies') as FormArray).push(new FormControl(value));
+        })
+      }
+
     });
+    
 
     this.form = new FormGroup({
       firstname: new FormControl('', Validators.required),
@@ -53,12 +61,12 @@ export class EditComponent implements OnInit {
         Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,4}$'),
       ]),
       address: new FormControl('', Validators.required),
-      hobbies: new FormArray([]),
+      // hobbies: new FormArray([]),
+      hobbies: this.fb.array([
+      ])
+      
     });
-     this.fb.array([
-      this.fb.control('')
-    ])
-  }
+    }
   get hobbies() {
     return this.form.get('hobbies') as FormArray;
   }
@@ -67,11 +75,12 @@ export class EditComponent implements OnInit {
   }
   submit() {
     console.log(this.form.value);
-    this.postService.update(this.id, this.form.value).subscribe((res) => {
+    this.postService.update(this.id, this.form.value ).subscribe((res) => {
       console.log('Employee updated successfully!');
       this.form.reset({});
       this.form.disable();
       this.message = true;
+     
     });
   }
   remove() {
@@ -79,9 +88,7 @@ export class EditComponent implements OnInit {
     this.router.navigateByUrl('post/index');
   }
   getHobbies() {
-    return (this.form.get('hobbies') as FormArray);
+    return (this.form.get('hobbies') as FormArray).controls;
   }
-  addAlias() {
-    this.hobbies.push(this.fb.control(''));
-  }
+
 }
