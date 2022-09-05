@@ -8,34 +8,23 @@ import { Post } from './post';
   providedIn: 'root'
 })
 export class PostService {
-  private apiURL = "http://localhost:3000";
-   
-  httpOptions = {
-    headers: new HttpHeaders({
-      'Content-Type': 'application/json'
-    })
-  }
-  
+  headers = new HttpHeaders().set('Content-Type', 'application/json');
   constructor(private httpClient: HttpClient) { }
-   
+
   getAll(): Observable<Post[]> {
-    return this.httpClient.get<Post[]>(this.apiURL + '/posts/')
+    return this.httpClient.get<Post[]>('https://crudcrud.com/api/e6b3939112b64880879559ced591cd11/unicorns')
   }
-   
+
   create(post:any): Observable<Post> {
-    return this.httpClient.post<Post>(this.apiURL + '/posts/', JSON.stringify(post), this.httpOptions)
-  }  
-   
+    return this.httpClient.post<Post>('https://crudcrud.com/api/e6b3939112b64880879559ced591cd11/unicorns',(post))
+  }
+
   find(id:number , firstname :string ): Observable<Post> {
-    return this.httpClient.get<Post>(this.apiURL + '/posts/' + id)
+    return this.httpClient.get<Post>('https://crudcrud.com/api/e6b3939112b64880879559ced591cd11/unicorns/' + id)
   }
-   
+
   update(id: number, post: any): Observable<Post> {
-    return this.httpClient.put<Post>(this.apiURL + '/posts/' + id, JSON.stringify(post), this.httpOptions)
+    return this.httpClient.put<Post>('https://crudcrud.com/api/e6b3939112b64880879559ced591cd11/unicorns/' + id,(post))
   }
-   
-  delete(id: number){
-    return this.httpClient.delete<Post>(this.apiURL + '/posts/' + id, this.httpOptions)
-  }
-  
+
 }

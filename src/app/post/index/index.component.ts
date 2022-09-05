@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PostService } from '../post.service';
 import { Post } from '../post';
+import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 
 
 
@@ -11,38 +12,21 @@ import { Post } from '../post';
 })
 export class IndexComponent implements OnInit {
   posts: Post[] = [];
- 
+  public iconUrl:any
 
-  constructor(public postService: PostService , ) {
+
+  constructor(public postService: PostService ,
+    private sanitizer: DomSanitizer ) {
   }
   message: boolean = false;
 
   ngOnInit(): void {
+
     this.postService.getAll().subscribe((data: Post[]) => {
       this.posts = data;
       console.log(this.posts);
     });
-  }
-
-  deletePost(id: number, firstname: string) {
-    if (
-      confirm(
-        'Do you really want to delete :  Id is => ' +
-          id +
-          ' First-Name =>' +
-          firstname
-      )
-    ) {
-      this.postService.delete(id).subscribe((res) => {
-        this.posts = this.posts.filter((item) => item.id !== id);
-        if ((this.message = true)) {
-          setTimeout(() => this.remove(), 3000);
-        
-        console.log('Post deleted successfully!');
-        this.message = true;
-        }
-      });
-    }
+    // this.iconUrl = this.sanitizer.bypassSecurityTrustUrl( window .URL.createObjectURL(this.posts));
   }
   remove() {
     // auto close alert if required

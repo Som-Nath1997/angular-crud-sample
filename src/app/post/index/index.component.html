@@ -1,49 +1,25 @@
 <nav class="navbar navbar-light bg-primary">
-    <div class="container">
-        <h1 style="color: white">Angular-Crud-App</h1>
+  <div class="container">
+      <h1 style="color: white">Angular-Crud-App</h1>
 
-        <a href="#" routerLink="/post/create/" class="btn btn-success">Add New Employee</a>
-        <div *ngIf="message" style="position: absolute; 
-        transform: translateX(50%); right: 50%; " class="alert alert-danger alert-dismissible fade show" role="alert">
-            <strong>Deleted!</strong> Employee Deleted Succesfully.
-            <button (click)="remove()" type="button" class="btn-close" data-bs-dismiss="alert"
-                aria-label="Close"></button>
-        </div>
-    </div>
-</nav>
-<div class="container-fluid img">
-    <div class="container pt-4">
-        <table class="table table-hover table-info table-striped  ">
-            <thead class="table-dark">
-                <tr>
-                    <th scope="col">#Id</th>
-                    <th scope="col">First Name</th>
-                    <th scope="col">Last Name</th>
-                    <th scope="col">Job Title</th>
-                    <th scope="col">Email</th>
-                    <th scope="col">Address</th>
-                    <th scope="col">hobbies</th>
-                    <th scope="col">Employee Data View/Edit/Delete</th>
-                </tr>
-            </thead>
-            <tbody class="table-striped">
-                <tr *ngFor="let post of posts">
+      <a href="#" routerLink="/post/create/" class="btn btn-success">Add New Employee</a>
+<div class="container">
+  <div class="row" >
+      <div class="col-sm-3 m-4" *ngFor="let card of posts">
+<div class="card" style="width: 300px;">
 
-
-                    <td>{{ post.id }}</td>
-                    <td>{{ post.firstname }}</td>
-                    <td>{{ post.lastname }}</td>
-                    <td>{{ post.jobtitle }}</td>
-                    <td>{{ post.email }}</td>
-                    <td>{{ post.address }}</td>
-                    <td>{{ post.hobbies }}</td>
-                    <td>
-                        <a href="#" [routerLink]="['/post/', post.id, 'view']" class="btn btn-info  mx-3 ">View</a>
-                        <a href="#" [routerLink]="['/post/', post.id, 'edit']" class="btn btn-primary mx-3 ">Edit</a>
-                        <button type="button"  (click)="deletePost(post.id , post.firstname)"
-                            class="btn btn-danger mx-3 ">Delete</button>
-                    </td>
-                </tr>
-        </table>
-    </div>
+  <img [src]="card.imageUpload | urlSafe " class="card-img-top" alt="...">
+  <div class="card-body text-center">
+      <h5 class="card-title">Name</h5>
+      <p class="card-text">{{card.firstname}}</p>
+      <h5 class="card-title">Email</h5>
+      <p class="card-text">{{card.email}}</p>
+      <h5 class="card-title">Age</h5>
+      <p class="card-text">{{card.dob | ageCal}}</p>
+      <h5 class="card-title">Country</h5>
+      <p class="card-text">{{card.country}}</p>
+      <a href="#" class="btn btn-primary" [routerLink]="['/post/', card._id, 'edit']">Edit Profile</a>
+  </div>
 </div>
+      </div>
+  </div></div>

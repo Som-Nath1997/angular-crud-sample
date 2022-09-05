@@ -1,14 +1,8 @@
 export interface Post {
-  map(arg0: (address: any) => any): any[];
-  id: number;
+  _id: any
   firstname: string;
-  lastname: string;
-  jobtitle: string;
-  address: string;
   email: string;
-  hobbies : Hobbie[]; 
-}
-export interface Hobbie {
-  hobby?: '',
-  interst: ''
+  country:string
+  dob:any
+  imageUpload:any
 }
