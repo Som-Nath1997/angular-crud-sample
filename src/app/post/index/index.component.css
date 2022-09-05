@@ -1,6 +1,9 @@
-.container-fluid.img {
-    background-image: url(../../../assets/dashboard.jpg);
-    height: 90vh;
-    margin-top: 0%;
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.row > div[class*='col-'] {
+ display: flex;
 }
 
